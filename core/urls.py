@@ -1,7 +1,7 @@
-from django import views
-from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    path("/create-client", views.create_client, name="create_client"),
+    path('api/users/', views.user_list),
+    path('api/users/<int:pk>/', views.user_detail),
 ]
