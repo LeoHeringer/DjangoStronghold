@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -170,6 +171,9 @@ LOGGING = {
         },
     },
 }
+
+# Testing configuration
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
