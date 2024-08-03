@@ -174,6 +174,13 @@ LOGGING = {
 
 # Testing configuration
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = [
+    '--verbosity=2',
+    '--nologcapture',
+    '--with-coverage',
+    '--cover-package=core',
+    '--cover-html',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
