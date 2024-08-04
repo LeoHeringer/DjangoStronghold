@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'drf_yasg',
     'django_nose',
+    'debug_toolbar',  # Adicionando Django Debug Toolbar
 ]
 
 MIDDLEWARE = [
@@ -46,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',  # Adicionando middleware da Django Debug Toolbar
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -205,3 +207,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Administração
+ADMIN_SITE_HEADER = "Robust Django Backend Admin"
+ADMIN_SITE_TITLE = "Administração do Robust Django Backend"
+ADMIN_INDEX_TITLE = "Bem-vindo ao Painel de Administração"
+
+# Ferramentas de Monitoramento
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+# Adicionar configuração da Django Debug Toolbar
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': lambda request: DEBUG,
+}
